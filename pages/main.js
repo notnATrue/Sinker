@@ -2,9 +2,9 @@
 
 window.addEventListener("load", function () {
     var date = new Date();
-    if (localStorage.getItem('Tony') === 'undefined' || localStorage.getItem('Tony') === null) {
-        
-       createElement.call(
+    if (localStorage.getItem('Tony') === 'undefined' ||
+        localStorage.getItem('Tony') === null) {
+        createElement.call(
             this,
             'Tony',
             imgz(),
@@ -27,8 +27,8 @@ window.addEventListener("load", function () {
         let x = Math.random();
         let y = Math.round(x);
         if (y === 1){
-            return 'https://images.wallpaperscraft.com/image/background_circle_red_bright_69063_360x640.jpg';
-        } else { return 'https://images.wallpaperscraft.com/image/explosion_gray_metal_figure_10616_1024x600.jpg'}
+            return '';
+        } else { return ''}
     };
 });
 
