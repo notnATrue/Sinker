@@ -1,0 +1,23 @@
+{
+  "name": "sinker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "\u001b[D\u001b[D\u001b[D\u001b[start.js)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notnATrue/Sinker.git"
+  },
+  "author": "Snkr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/notnATrue/Sinker/issues"
+  },
+  "homepage": "https://github.com/notnATrue/Sinker#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodemon": "^1.17.4"
+  }
+}
