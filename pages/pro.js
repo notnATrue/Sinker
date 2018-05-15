@@ -3,36 +3,30 @@ var x,y;
 fetch('imglist.txt')
   .then(response => response.text())
   .then(text => globalItems.img = text)
-  .then(addict => { x = globalItems.img; 
-                    y = x.split('     ');
+  .then(addict => { x = globalItems.img;
+    y = x.split(/[ ]+/g);
+                    //y = x.split('     ');
                     //console.log(y);
                     globalItems.imgArr = y;
                     }).then(getBG);
 
 function getBG() {
-  function getRandom(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-  };
-
+  var i = getRandom(0, globalItems.imgArr.length);
+  dot();
   
-  var i = 0;
-  
-  console.log('Working');
+  console.log('fetched');
   setInterval(dot, 5000);
   function dot() {
     
-    if (i === globalItems.imgArr.length) {
-      i = 0;
-    }
-    //document.body.style.backgroundImage = 'url'+'('+globalItems.imgArr[i]+')';
-    //i++;
     document.body.style.backgroundImage = 'url' + '('+globalItems.imgArr[i] + ')';
     console.log(i);
     i = getRandom(0, globalItems.imgArr.length);
     console.log(i);
   };
-}
-  
+};
+function getRandom(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+};
 
   
   

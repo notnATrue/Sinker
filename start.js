@@ -13,11 +13,40 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
-    // if (req.cookies.type === "ninja" && req.cookies.connection === "trusted"){
     res.sendFile(__dirname + '/pages/index.html');
+    console.log('Connected user headers ' + req.rawHeaders);
+    console.log('API headers ' + res.getHeaderNames());
+    // if (req.cookies.type === "ninja" && req.cookies.connection === "trusted")
 });
 
 app.use(express.static(__dirname + '/pages'));
+
+app.get('/imglist.txt', function(req, res){
+    res.redirect('/');
+});
+
+// app.get('/imglist.txt', function(req, res){
+//     res.send = 'http://localhost:8080/imglist.txt';
+// });
+
+app.get('/api', function(req, res) {
+    res.send('api under constrution');
+});
+
+
+
+app.listen(8080);
+
+
+
+
+
+
+
+
+
+
+
 
 // app.post('/log', function (req, res) {
 //     if (req.body.password === '1234' && req.body.email === 'Owner@gmail.com') {
@@ -37,15 +66,14 @@ app.use(express.static(__dirname + '/pages'));
 //         res.sendStatus(200)}
 // });
 
-app.get('/imglist.txt', function(req, res){
-    res.send = 'http://localhost:8080/imglist.txt';
+
     // var c = JSON.stringify('http://localhost:8080/imglist.txt');
     // res.sendFile(c);
     // res.send(JSON.stringify(imglist.txt));
    //res.redirect('img.html');
    // res.location('imglist.txt');
     // res.redirect('file:///D:/ShowYourSkill/pages/imglist.txt');
-});
+
 // app.get('/log', function(req, res) {
 //     console.log(req.cookies);
 //     res.redirect('index.html');
@@ -56,15 +84,13 @@ app.get('/imglist.txt', function(req, res){
 //     } else {res.sendStatus(404);}
 // });
 
-app.get('/api', function(req, res) {
-    res.send('api under constrution');
-});
+
 
 // app.get('/tools', function(req, res){
 //     res.redirect('tools.html');
 // });
 
-app.listen(8080);
+
 
 
 

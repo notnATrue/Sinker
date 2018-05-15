@@ -56,6 +56,7 @@ function creation() {
         return;
     };
     
+
     var cons = new Constuctor();
         cons.name = input.value;
         cons.img = upload.value;
@@ -64,10 +65,14 @@ function creation() {
 };
 
 function createElement(name, img, text, likes, d) {
+    
    var data = new Date();
     data.toUTCString;
     var x = {name, img, text, likes, d};
-    
+    if (x.name.length > 42){
+        console.log(x.name)
+        x.name.substr = x.name.substr(0, 42);
+    }
     localStorage.setItem(x.name, JSON.stringify(x));
     
     var c = localStorage.getItem(name);
@@ -117,7 +122,10 @@ function createElement(name, img, text, likes, d) {
 
             like.innerText = js_likes.likes;
         });
-    div.appendChild(h ,dateT,imgS);
+    
+        
+    
+    div.appendChild(h);
     div.appendChild(dateT);
     div.appendChild(imgS);
     div.appendChild(textRes);
