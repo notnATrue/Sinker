@@ -4,18 +4,21 @@ fetch('imglist.txt')
   .then(response => response.text())
   .then(text => globalItems.img = text)
   .then(addict => { x = globalItems.img;
-    y = x.split(/[ ]+/g);
+                    y = x.split(/[ ]+/g);
                     //y = x.split('     ');
                     //console.log(y);
                     globalItems.imgArr = y;
                     }).then(getBG);
 
 function getBG() {
+  
   var i = getRandom(0, globalItems.imgArr.length);
   dot();
   
   console.log('fetched');
-  setInterval(dot, 5000);
+  var x = setInterval(dot, 5000);
+  
+  
   function dot() {
     
     document.body.style.backgroundImage = 'url' + '('+globalItems.imgArr[i] + ')';
@@ -23,7 +26,17 @@ function getBG() {
     i = getRandom(0, globalItems.imgArr.length);
     console.log(i);
   };
-};
+  document.addEventListener('keypress', add);
+  function add(){
+    if (!(!x) === true){
+      clearInterval(x);
+      console.log('pressed');
+    }
+    // clearInterval(x);
+    // console.log('pressed' + !(!x));
+  };
+  
+}
 function getRandom(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
