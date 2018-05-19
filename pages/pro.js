@@ -5,38 +5,47 @@ fetch('imglist.txt')
   .then(text => globalItems.img = text)
   .then(addict => { x = globalItems.img;
                     y = x.split(/[ ]+/g);
-                    //y = x.split('     ');
-                    //console.log(y);
                     globalItems.imgArr = y;
-                    }).then(getBG);
+                    })
+  .then(getBG);
 
 function getBG() {
-  
   var i = getRandom(0, globalItems.imgArr.length);
   dot();
   
   console.log('fetched');
   var x = setInterval(dot, 5000);
   
-  
   function dot() {
+    var img = new Image();
+  
+    img.onload =  function () {
+      console.log('loaded');
+      console.log(new Date());
+      document.body.style.backgroundImage = 'url' + '(' + img.src + ')';
+    };
     
-    document.body.style.backgroundImage = 'url' + '('+globalItems.imgArr[i] + ')';
+    img.src = globalItems.imgArr[i];
+   
+      
+    
+    
     console.log(i);
     i = getRandom(0, globalItems.imgArr.length);
     console.log(i);
+    
   };
+
   document.addEventListener('keypress', add);
+  
   function add(){
     if (!(!x) === true){
       clearInterval(x);
       console.log('pressed');
-    }
-    // clearInterval(x);
-    // console.log('pressed' + !(!x));
+    };
   };
-  
-}
+};
+
 function getRandom(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };

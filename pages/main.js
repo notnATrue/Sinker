@@ -1,4 +1,4 @@
-// import yy from "D:/CoursWork/db.js";
+
 
 window.addEventListener("load", function () {
     var date = new Date();
@@ -11,24 +11,24 @@ window.addEventListener("load", function () {
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.',
              0, 0);
     } else {
-        
-        let s = localStorage;
-        logg(s);
-        for (key in s) {
+            let s = localStorage;
+            logg(s);
+            for (key in s) {
             var x = localStorage.getItem(key);
-            if (x !== null) {
+                if (x !== null) {
                 var y = JSON.parse(x)
                 createElement.call(this, y.name, y.img, y.text, y.likes, y.d);
                 logg(x);
+                };
             };
-        }
-    };
+        };
+
     function imgz(){
         let x = Math.random();
         let y = Math.round(x);
-        if (y === 1){
+            if (y === 1){
             return '';
-        } else { return ''}
+            } else { return ''};
     };
 });
 
@@ -49,14 +49,11 @@ function Constuctor(name, img, text) {
     this.text = text;
 };
 
-
-
 function creation() {
     if (input.value === "" || upload.value === "" || textarea.value === ""){
         return;
     };
     
-
     var cons = new Constuctor();
         cons.name = input.value;
         cons.img = upload.value;
@@ -77,7 +74,8 @@ function createElement(name, img, text, likes, d) {
     
     var c = localStorage.getItem(name);
 
-    if (JSON.parse(c).d === null || JSON.parse(c).d === undefined || JSON.parse(c).d === 'undefined' || JSON.parse(c).d === 0){
+    if (JSON.parse(c).d === null || JSON.parse(c).d === undefined ||
+        JSON.parse(c).d === 'undefined' || JSON.parse(c).d === 0) {
         x.d = data.toUTCString();
         localStorage.setItem(x.name, JSON.stringify(x));
         logg(localStorage);
@@ -122,9 +120,7 @@ function createElement(name, img, text, likes, d) {
 
             like.innerText = js_likes.likes;
         });
-    
-        
-    
+
     div.appendChild(h);
     div.appendChild(dateT);
     div.appendChild(imgS);
@@ -132,7 +128,7 @@ function createElement(name, img, text, likes, d) {
     div.appendChild(like);
     };
 
-function But(likes){
+function But(likes) {
     this.likes = likes;
     this.getLike = function(){
         return this.likes++;
@@ -144,6 +140,53 @@ function logg(t){
 
 
 
+var i = 0;
+var timer = function() {
+    console.log('timer = ' + i);
+    i++;
+    setTimeout(timer, 2000);
+};
 
+//timer();
+
+/*
+var loginValidationService = function(login) { 
+    return new Promise((resolve, reject) => {
+        if (login.length > 4) {
+            resolve('ok');
+        } else {
+            reject('error');
+        }
+    }); 
+}
+
+loginValidationService('us')
+.then(res => { console.log(res) })
+.catch(res => { console.log(res) }) */
+
+var doRegister = function(user) { 
+    return fetch('/api/register', {
+    method: "POST",
+    body: JSON.stringify(user),
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+  }).then(res => {
+      return res.json();
+  });
+};
+
+doRegister({ login: "user44444", password: '12345' })
+.then(res => {
+    console.log('registration: ');
+    console.log(res);
+});
+
+doRegister({ login: "user123123123", password: '12345' })
+.then(res => {
+    console.log('registration: ');
+    console.log(res);
+});
 
 

@@ -1,4 +1,3 @@
-// import { request } from 'https';
 var express = require('express'),
     app = express();
 
@@ -15,13 +14,15 @@ app.use(bodyParser.json());
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/pages/index.html');
     console.log('Connected user headers ' + req.rawHeaders);
-    console.log('API headers ' + res.getHeaderNames());
-    // if (req.cookies.type === "ninja" && req.cookies.connection === "trusted")
+    // console.log('API headers ' + res);
+    
+
 });
 
 app.use(express.static(__dirname + '/pages'));
 
-app.get('/imglist.txt', function(req, res){
+app.get('/imglist', function(req, res){
+    console.log(req.cookies)
     res.redirect('/');
 });
 
@@ -33,7 +34,32 @@ app.get('/api', function(req, res) {
     res.send('api under constrution');
 });
 
+var userDB = {};
 
+app.post('/api/register', function(req, res) {
+    console.log('-->' + req.body);
+    console.log(req.body.login);
+    console.log(userDB[req.body.login]);
+    console.log("USERDB" + userDB);
+    if (userDB[req.body.login] != undefined) {
+        res.json({status: 'user already esists'});
+    } else {
+        userDB[req.body.login] = req.body;
+        res.json({status: 'ok'});
+    }
+});
+
+app.get('/api/users', function(req, res){
+    console.log('get users');
+    console.log(userDB);
+    res.json(userDB);
+});
+
+app.get('/api/users/:login', function(req, res){
+    console.log(userDB[req.params.login]);
+    
+    res.json(userDB[req.params.login]);
+});
 
 app.listen(8080);
 
