@@ -26,15 +26,11 @@ app.get('/imglist', function(req, res){
     res.redirect('/');
 });
 
-// app.get('/imglist.txt', function(req, res){
-//     res.send = 'http://localhost:8080/imglist.txt';
-// });
-
 app.get('/api', function(req, res) {
     res.send('api under constrution');
 });
 
-var userDB = {};
+var userDB = {Snkr:{login: 'Sinker',password:'github'} };
 
 app.post('/api/register', function(req, res) {
     console.log('-->' + req.body);
@@ -48,6 +44,9 @@ app.post('/api/register', function(req, res) {
         res.json({status: 'ok'});
     }
 });
+app.get('/api/register', function(req, res){
+    res.redirect('/index.html');
+})
 
 app.get('/api/users', function(req, res){
     console.log('get users');

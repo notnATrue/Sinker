@@ -177,7 +177,7 @@ var doRegister = function(user) {
   });
 };
 
-doRegister({ login: "user44444", password: '12345' })
+doRegister({ login: "user332", password: '54321' })
 .then(res => {
     console.log('registration: ');
     console.log(res);
