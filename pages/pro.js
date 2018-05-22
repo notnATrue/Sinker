@@ -18,22 +18,46 @@ function getBG() {
   
   function dot() {
     var img = new Image();
-  
+    img.setAttribute('class','hire');
+    // img.style = "fixed:top";
+    // img.style.opacity = 0.5;
+    
     img.onload =  function () {
-      console.log('loaded');
+      var bg = document.querySelector('.bg-image');
+      bg.src = img.src;
+      bg.style.opacity = 0.05;
+      var c = 0.05 ;
       console.log(new Date());
-      document.body.style.backgroundImage = 'url' + '(' + img.src + ')';
+      // var getImg = 'url' + '(' + img.src + ')';
+      var cont = document.querySelector('.container');
+      
+      document.body.appendChild(bg);
+      
+      var y = setInterval(function(){
+        if(c >= 1){
+          clearInterval(y);
+          var t = 1;
+          var z = setInterval(function(){
+          bg.style.opacity = t;
+          t -= 0.01;
+            if (bg.style.opacity <= 0.02){
+              clearInterval(z);
+        }
+      }, 25)
+
+        }
+        console.log(bg.style.opacity);
+        bg.style.opacity = c;
+        c += 0.01;
+      }, 25);
+      
     };
     
     img.src = globalItems.imgArr[i];
-   
-      
-    
-    
+
     console.log(i);
     i = getRandom(0, globalItems.imgArr.length);
     console.log(i);
-    
   };
 
   document.addEventListener('keypress', add);

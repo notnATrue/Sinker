@@ -64,7 +64,7 @@ function creation() {
 function createElement(name, img, text, likes, d) {
     
    var data = new Date();
-    data.toUTCString;
+
     var x = {name, img, text, likes, d};
     if (x.name.length > 42){
         console.log(x.name)
@@ -176,13 +176,13 @@ var doRegister = function(user) {
       return res.json();
   });
 };
-
+//
 doRegister({ login: "user332", password: '54321' })
 .then(res => {
     console.log('registration: ');
     console.log(res);
 });
-
+//
 doRegister({ login: "user123123123", password: '12345' })
 .then(res => {
     console.log('registration: ');
