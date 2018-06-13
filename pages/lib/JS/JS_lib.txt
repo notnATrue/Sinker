@@ -1,0 +1,39 @@
+﻿<div class="helloworld" style="text-align: left; margin-right:15px">
+
+<h4 class="head-title">Fetch</h4>
+
+Fetch API предоставляет интерфейс для получения ресурсов (в том числе по сети). 
+Метод fetch() принимает один обязательный аргумет —  путь к данным, которые вы хотите получить. Он возвращает promise, 
+который ведёт к ответу (Response) на запрос, если все прошло удачно. Вы можете также передать во втором аргументе необязательный объект с указанием опций.
+
+fetch спецификация отличается от jQuery.ajax() в основном двумя способами:
+
+Promise возвращенный fetch() не отклонит состояние ошибки HTTP, даже если ответ HTTP 404 или 500.
+Вместо этого, он будет выполнен нормально (с установкой статуса ok  в false).
+По умолчанию, fetch не будет отправлять или получать файлы cookie с сервера,
+в результате чего запросы будут без проверки подлинности, если сайт основан на сохранении сессии пользователя .
+
+запроса и ответы могут содержать данные тела. Тело является экземпляром любого из следующих типов:
+                                          ArrayBuffer
+                                          ArrayBufferView
+                                          Blob/File
+                                          string
+                                          URLSearchParams
+                                          FormData
+
+<pre class="" style="margin-top:10px">
+
+fetch('/',{method:'get',credentials:'include'})
+.then(res => {for(keys in res){console.log(keys)}})
+.then(fetch('/').then(response => response.blob())
+.then(data => {var newObj = URL.createObjectURL(data); console.log(newObj);})
+.catch(error => console.log(error)));
+
+</pre>
+
+<a href="https://developer.mozilla.org/ru/docs/Web/API/Fetch_API">Fetch</a>
+<a href="https://developer.mozilla.org/ru/docs/Web/API/Fetch_API/Using_Fetch">Fetch+</a>
+<a href="https://stackoverflow.com/questions/39565706/post-request-with-fetch-api">Fetch-api</a>
+<a href="https://fetch.spec.whatwg.org/">Fetch-spec</a>
+
+</div>

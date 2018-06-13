@@ -1,0 +1,46 @@
+<pre title="Search">
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</pre>
+
+<pre title="display;classList">
+    var elem = document.querySelector("#clock")
+
+//Выведем классы
+console.log(elem.classList); //DOMTokenList ["example", "for", "you"]
+
+//Добавим классы
+elem.classList.add("ok", "understand");
+console.log(elem.classList); //DOMTokenList ["example", "for", "you", "ok", "understand"]
+
+//Переключим классы
+elem.classList.toggle("you");
+elem.classList.toggle("he");
+console.log(elem.classList); //DOMTokenList ["example", "for", "ok", "understand", "he"]
+
+//Проверим класс
+console.log(elem.classList.contains("example")); //true
+console.log(elem.classList.contains("lol")); //false
+
+//И удалим классы
+elem.classList.remove("example", "for", "understand", "he");
+console.log(elem.classList); //DOMTokenList ["ok"]
+</pre>
+
+
+elem.removeAttribute

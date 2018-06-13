@@ -8,8 +8,8 @@
   z-index: 1;
 }
 .head {
-  margin-bottom: 3px;
-  border-radius: 4px;
+  margin-bottom: 15px;
+  border-radius: 6px;
   background: rgba(0, 0, 0, 0.8);
   padding: 20px;
   color: #fff;
@@ -17,12 +17,13 @@
 }
 
 .constructor {
-  width:300px;
+  /* width:300px; */
   border-radius: 4px;
   text-align: center;
   /* width: 29%; */
   float: left;
   background: rgba(67, 87, 114,0.25) ;
+  padding: 1%;
   height: 350px;
   /* display: none; */
 }
@@ -108,7 +109,7 @@ body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .btn{
-  box-shadow: inset 1px 1px 20px 1px grey;;
+  /* box-shadow: inset 1px 1px 20px 1px grey;; */
   overflow: hidden;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     -webkit-user-select: none;
@@ -117,6 +118,7 @@ body{
     margin: 5% auto;
     width: 200px auto;
     border-radius: 5px;
+    border-color:rgb(72, 255, 0);
     cursor: pointer;
     /* display: inline-block; */
     background-color: #27c912;
@@ -126,8 +128,6 @@ body{
     text-decoration: none;
     font-size: 16px;
     margin-left: 20px;
-    opacity: 0.9;
-
     width: 70%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -157,15 +157,19 @@ body{
     display: inline-block;
 } */
 .btn:hover, .btn:active {
-  
-  color:rgb(87, 87, 87);
+  color:rgb(75, 75, 75);
     background-color: rgb(72, 255, 0);
 }
 .like:hover, .like:active {
+  
+  
   color:rgb(89, 89, 89);
   background-color: rgb(255, 145, 0);
 }
 .like{
+  -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     margin: 0 auto;
     width: 22px;
     border-radius: 5px;
@@ -182,4 +186,16 @@ body{
 }
 h4 {
   color:white;
+}
+#resFirst{
+  color:white;
+}
+#resSecond{
+  color:white;
+}
+
+.my-div{
+  border:none;
+  padding: 5px;
+  text-align: center;
 }

@@ -1,0 +1,134 @@
+﻿<pre class="container helloworld">
+
+<h4>Fetch</h4>
+
+Fetch API предоставляет интерфейс для получения ресурсов (в том числе по сети). 
+Метод fetch() принимает один обязательный аргумет —  путь к данным, которые вы хотите получить. Он возвращает promise, 
+который ведёт к ответу (Response) на запрос, если все прошло удачно. Вы можете также передать во втором аргументе необязательный объект с указанием опций.
+
+fetch спецификация отличается от jQuery.ajax() в основном двумя способами:
+
+Promise возвращенный fetch() не отклонит состояние ошибки HTTP, даже если ответ HTTP 404 или 500.
+Вместо этого, он будет выполнен нормально (с установкой статуса ok  в false).
+По умолчанию, fetch не будет отправлять или получать файлы cookie с сервера,
+в результате чего запросы будут без проверки подлинности, если сайт основан на сохранении сессии пользователя .
+
+запроса и ответы могут содержать данные тела. Тело является экземпляром любого из следующих типов:
+                                          ArrayBuffer
+                                          ArrayBufferView
+                                          Blob/File
+                                          string
+                                          URLSearchParams
+                                          FormData
+<pre>
+postData('https://notnainside.herokuapp.com/', {answer: 42})
+  .then(data => console.log(data)) 
+  .catch(error => console.error(error));
+
+
+function postData(url, data) {
+  // Default options are marked with *
+  return fetch(url, {
+    body: JSON.stringify(data), // must match 'Content-Type' header
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, same-origin, *omit
+    headers: {
+      'user-agent': 'Mozilla/4.0 MDN Example',
+      'content-type': 'application/json'
+    },
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, cors, *same-origin
+    redirect: 'follow', // manual, *follow, error
+    referrer: 'no-referrer', // *client, no-referrer
+  });
+  .then(response => response.json()) // parses response to JSON
+};
+
+</pre>
+https://developer.mozilla.org/ru/docs/Web/API/Fetch_API
+https://developer.mozilla.org/ru/docs/Web/API/Fetch_API/Using_Fetch
+https://stackoverflow.com/questions/39565706/post-request-with-fetch-api
+https://fetch.spec.whatwg.org/
+
+
+
+https://frontender.info/absolute-beginners-guide-to-nodejs/
+
+/=/ HTTP:curl /=/
+https://ru.wikipedia.org/wiki/CURL
+
+</pre>
+
+
+<p>This file is <!--#fsize virtual="/docs/mod/mod_include.html" --> bytes.</p>
+blob:jBinary
+https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest#Submitting_forms_and_uploading_files
+jBinary.load(url).then(function (binary) {
+  // here you can use `binary` instance to parse data  
+  // in any format (string, array of bytes, custom structure etc.)
+});
+https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/Sending_and_Receiving_Binary_Data</div>
+
+/=/ Node.js /=/
+
+// Загрузка модуля fs
+var fs = require('fs');
+
+// Считывание содержимого файла в память
+fs.readFile('example_log.txt', function (err, logData) {
+
+  // Если произошла ошибка, то генерируем исключение,
+  // и работа приложения завершится.
+  if (err) throw err;
+
+  // logData имеет тип Buffer, переводим в строку
+  var text = logData.toString();
+
+  var results = {};
+
+  // Разбивка файла по строкам
+  var lines = text.split('\n');
+
+  lines.forEach(function(line) {
+    var parts = line.split(' ');
+    var letter = parts[1];
+    var count = parseInt(parts[2]);
+
+    if(!results[letter]) {
+      results[letter] = 0;
+    }
+
+    results[letter] += parseInt(count);
+  });
+
+  console.log(results);
+  // { A: 2, B: 14, C: 6 }
+});
+
+var fs = require('fs');
+
+// Считывание содержимого файла в память
+fs.readFile('example_log.txt', function (err, logData) {
+
+  // Если произошла ошибка, то мы генерируем исключение,
+  // и работа приложения завершается
+  if (err) throw err;
+
+  // logData имеет тип Buffer, переводим в string
+  var text = logData.toString();
+});
+
+
+<a href="https://frontender.info/absolute-beginners-guide-to-nodejs/"></a>
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_list
+
+for(g in t){if(!isNaN(g)){console.log(t[g])}}
+
+"pra":"fetch('/',{method:'get', credentials:'include'})
+    .then(res => {for (keys in res)
+                {console.log(keys)}}) 
+    .then(fetch('/').then(response => response.blob()) 
+    .then(data => {var newObj = URL.createObjectURL(data);
+                   console.log(newObj)})
+    .catch(error => console.log(error)))"
+

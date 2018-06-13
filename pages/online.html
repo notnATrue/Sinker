@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>
+        notnAInside
+    </title>
+</head>
+<link rel="stylesheet" href="css/index.css"> 
+<body style="background-color:rgb(54, 63, 85);">
+        <div class="main">
+<header class="head">
+    <div class="my-div">
+        <a class="btn" id="add">Create</a>
+        
+    </div>
+</header>
+
+  <div class="constructor">
+
+
+        
+
+        
+        <select id="select" data-id="technology" style="text-align:center">
+                <option id="javascript" >
+                    <a class="btn">Javascript</a>
+                </option>
+                <option id="HTML">
+                    HTML
+                </option>
+        </select>
+      <div class="editor">
+            <input id="head" class="input"></input>
+          <textarea id="body" class="textarea input"></textarea>
+          
+          <div class="my-div">
+            <a class="btn" id="save">Save</a>
+        </div>
+      </div>
+      
+   </div>
+   
+   
+</div>
+<script>
+    var preData = {}
+    let tech = document.querySelector('#select');
+    let save = document.querySelector('#save');
+    var head = document.querySelector('#head');
+    var body = document.querySelector('#body');
+    save.addEventListener('click', function(){
+        let test = encodeURIComponent(body.value)
+        preData.head = head.value;
+        preData.body = test;
+        localStorage.setItem(tech.value, JSON.stringify(preData)) 
+        create(localStorage.getItem(tech.value))
+        console.log(tech.value ,localStorage.getItem(tech.value))
+    })
+    
+    function create(res) {
+       return fetch('/create', {
+        method: "POST",
+        body: JSON.stringify({[tech.value]:res}),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'}
+        })
+        .then(res => res)
+        .then(data => console.log(data))
+    };
+</script>
+
+
+</body>
+</html>

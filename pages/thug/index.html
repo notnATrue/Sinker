@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>
+        notnAInside
+    </title>
+</head>
+<body style="background-color:rgb(54, 63, 85);">
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> -->
+<!-- <link rel="stylesheet" href="css/normalize.css"> -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/normalize.css">
+<img align="bottom" class="bg-image"></img>
+
+<div class="container">
+
+<div class="wrapper" style="text-align:center;">
+    <div class="head" >
+        
+        <a class="btn" id="crypt" style="width:200px;">
+                Encryption</a>
+        <a class="btn" id="news" style="width:200px;">Category</a>
+        <a class="like" id="clear" style="width:200px;">Cancel</a>
+        <a id="newMain"  class="btn" style="width:150px; float:right;">newPage</a>
+    </div>
+    <div id="newsShow" class="container" style="display:none">
+    <div class="constructor">
+        <div class="car">
+            <h3 style="color:white">News Constructor</h3>
+            <input id="input" class="input" placeholder="Author"></input> 
+        </div>
+        <div class="car">
+            <input id="upload" class="input" placeholder="Image-url"></input>
+        </div>
+        <div class="car">
+            <textarea id="textarea" class="input" placeholder="Text" style="resize:vertical"></textarea>
+        </div>
+        <div class="car">
+            <a class="btn" id="button" >Add</a>
+        </div>
+    </div>
+    <div class="content">
+        <div><h3 style="color:orange;">News</h3></div>
+       
+    </div>
+</div>
+</div>
+<!-- <div class="footer"></div> -->
+</div>
+<!-- new -->
+<div id="cryptoapi" class="container" style="display:none">
+        <h4 style="color:white">Encrypt your data. <br>
+          Attention, the application in the test mode, check the encrypted data in decrypt form.</h4>
+      <div class="car">
+          <button class="btn" type="button" onclick='goHome()'  style="float:left; width:111px">GetBack</button>
+      </div>
+
+      <div class="main content" style="overflow:hidden">
+          <div class="input-group-sm">
+          </div>
+        </div>
+      
+      <div class="constructor" style="width:500px;height:500px">
+          <div id="resFirst" class="div-res" style="width:30%;float:left;color:white">Enctypt
+            <p id="en" style='word-wrap: break-word' class="h6"></p>
+          </div>
+          <div id="resSecond" class="div-res" style="width:30%;float:right;color:white" >Decrypt
+              <p id="dc" style='word-wrap: break-word' class="h6" ></p>
+              
+          </div>
+      </div>
+    
+    </div>
+<!-- end -->
+<script src="run.js"></script>
+
+<script src="obj.js"></script>
+<script src="pro.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

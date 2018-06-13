@@ -1,0 +1,110 @@
+body{
+    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+  }
+  .textarea{
+    margin-right: auto;
+    margin-left: auto;
+    resize: none;
+      overflow: auto;
+      height:500px;
+  }
+  .head {
+    margin-bottom: 15px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    color: #fff;
+    /* width: 70% auto; */
+  }
+
+  .constructor {
+    width:800px;
+    box-sizing: border-box;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    border-radius: 2px;
+    background: rgb(123, 123, 123) ;
+    padding: 1%;
+    /* display: none; */
+  }
+ 
+  .main{
+      margin: auto;
+    /* justify-content: center; */
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    overflow: hidden;
+  }
+
+  .input {
+      position:sticky;
+    background-color:rgb(189, 188, 188);
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+  }
+  
+  .btn{
+    /* box-shadow: inset 1px 1px 20px 1px grey;; */
+    overflow: hidden;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      margin: 5% auto;
+      width: 200px auto;
+      border-radius: 5px;
+      border-color:rgb(72, 255, 0);
+      cursor: pointer;
+      /* display: inline-block; */
+      background-color: #27c912;
+      color: rgb(255, 255, 255);
+      padding: 14px 30px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      margin-left: 20px;
+      /* opacity: 0.9; */
+      width: 70%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      /* display: inline-block; */
+    /* border: 1px solid #ccc; */
+    /* border-radius: 4px; */
+      /* box-sizing: border-box; */
+  }
+  .btn:hover, .btn:active {
+    color:rgb(75, 75, 75);
+      background-color: rgb(72, 255, 0);
+  }
+  
+  /* .editor{
+    background-color: #eee;
+    color: #444;
+    
+    padding: 18px;
+    
+    border: none;
+    
+    outline: none;
+    
+    transition: 0.4s;
+  } */
+  
+  .my-div{
+    border:none;
+    padding: 5px;
+    text-align: center;
+  }
+ 

@@ -1,0 +1,7 @@
+{"description":"lib/JS/JS_lib.txt" , 
+    "example": "postData('https://notnainside.herokuapp.com/', {answer: 42}) .then(data => console.log(data)) .catch(error => console.error(error)); function postData(url, data) { // Default options are marked with * return fetch(url, { body: JSON.stringify(data), // must match 'Content-Type' header cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached credentials: 'same-origin', // include, same-origin, *omit headers: { 'user-agent': 'Mozilla/4.0 MDN Example', 'content-type': 'application/json' }, method: 'POST', // *GET, POST, PUT, DELETE, etc. mode: 'cors', // no-cors, cors, *same-origin redirect: 'follow', // manual, *follow, error referrer: 'no-referrer', // *client, no-referrer }); .then(response => response.json()) // parses response to JSON }; ", "practice": "<div>fetch('/',%20%7Bmethod:'get',credentials:'include'%7D)%20.then(res%20=%3E%20%7Bfor(keys%20in%20res)%7Bconsole.log(keys)%7D%7D)%20.then(fetch('/').then(response%20=%3E%20response.blob())%20.then(data%20=%3E%20%7Bvar%20newObj%20=%20URL.createObjectURL(data);%20console.log(newObj)%7D)%20.catch(error%20=%3E%20console.log(error)))</div>", 
+    "links":"<div id='copyrights' class='nav-link'><a>https://developer.mozilla.org/ru/docs/Web/API/Fetch_API</a> <a>https://developer.mozilla.org/ru/docs/Web/API/Fetch_API/Using_Fetch</a> <a>https://stackoverflow.com/questions/39565706/post-request-with-fetch-api</a></div>",
+    "src":"<body href='https://developer.mozilla.org/en-US/docs/Web/API/NodeList/item>'</body>"}
+
+
+    
